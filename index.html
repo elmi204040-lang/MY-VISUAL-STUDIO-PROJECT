@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Music Website</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        iframe {
+            margin-top: 20px;
+        }
+
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HTML -->
+    <h1>My Favorite Song</h1>
+
+    <!-- YouTube Video -->
+    <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/3JZ_D3ELwOQ"
+            frameborder="0"
+            allowfullscreen>
+    </iframe>
+
+    <h2>Animation Example</h2>
+
+    <div id="box"></div>
+
+    <button onclick="moveBox()">Start Animation</button>
+
+    <!-- JavaScript -->
+    <script>
+        function moveBox() {
+            let box = document.getElementById("box");
+            let position = 0;
+
+            let animation = setInterval(function () {
+                if (position >= 300) {
+                    clearInterval(animation);
+                } else {
+                    position++;
+                    box.style.left = position + "px";
+                }
+            }, 10);
+        }
+    </script>
+
+</body>
+</html>
